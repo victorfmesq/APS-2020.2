@@ -7,7 +7,16 @@ public class RepositorioPessoas {
 
         static Map<String, Pessoa> pessoas = new HashMap<String, Pessoa>();
 
-        public void adicionaPessoa(String chave, Pessoa valor){
-                this.pessoas.put(chave, valor);
+        public static void adicionaPessoa(String mat, Pessoa valor){
+                pessoas.put(mat, valor);
         }
+
+        public static void removerPessoa(String mat){
+                pessoas.remove(mat);
+        }
+
+        public static Pessoa retornarPessoa(String mat){
+                return pessoas.get(mat);
+        }
+
 }

@@ -7,14 +7,20 @@ public class RepositorioProdutos {
 
     static Map<String, Produto> produtos = new HashMap<String, Produto>();
 
+    // methods
     public static void adicionaProduto(String chave, Produto valor){
         produtos.put(chave, valor);
     }
 
-    public Produto getProduto(String cod){
+    public static Produto retornarProduto(String cod) {
         return produtos.get(cod);
     }
 
+    public static void removerProduto(String cod){
+        produtos.remove(cod);
+    }
+
+    // gets and sets (listagens)
     public static Map<String, Produto> getProdutos() {
         return produtos;
     }

@@ -22,7 +22,7 @@ public class Locacoes {
 
     void calcularMulta(){
         RepositorioProdutos produtos = new RepositorioProdutos();
-        Produto p = produtos.getProduto(codigoProduto);
+        Produto p = produtos.retornarProduto(codigoProduto);
 
         if(p == null){ // se o produto nao foi locado
             System.out.println("ERRO: Este produto nao foi Locado");
