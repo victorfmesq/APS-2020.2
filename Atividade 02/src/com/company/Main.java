@@ -25,9 +25,9 @@ public class Main {
                         // Login Gerente
                         System.out.println("**** Faça seu Login ****");
                         System.out.println("Digite seu login: ");
-                        String login = scan.nextLine();
+                        String login = scan.next();
                         System.out.println("Digite sua senha: ");
-                        String senha = scan.nextLine();
+                        String senha = scan.next();
 
 
                         // testar se Login e senha são validos e se é um gerente

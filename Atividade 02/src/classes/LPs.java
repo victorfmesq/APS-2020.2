@@ -33,7 +33,10 @@ public class LPs extends Musica{
     }
 
     @Override
-    double calcularDiaria() {
-        return 0;
+    double calcularDiaria(int c) {
+        if(this.raro){
+            return c * 35.0;
+        }
+        return c * 23.5;
     }
 }

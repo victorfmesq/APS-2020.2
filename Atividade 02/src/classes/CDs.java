@@ -44,7 +44,10 @@ public class CDs extends Musica{
     }
 
     @Override
-    double calcularDiaria() {
-        return 0;
+    double calcularDiaria(int c) {
+        if(this.arranhado && this.duplo){ return c * 12.0;}
+        else if(this.arranhado && !this.duplo){ return c * 6;}
+        else if(!this.arranhado && this.duplo){ return c * 20.0; }
+        else{return c * 10.0;}
     }
 }

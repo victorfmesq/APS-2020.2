@@ -33,7 +33,10 @@ public class Vhs extends Filme
     }
 
     @Override
-    double calcularDiaria() {
-        return 0;
+    double calcularDiaria(int c) {
+        if(this.cores){
+            return c * 15.0;
+        }
+        return c * 8.0;
     }
 }

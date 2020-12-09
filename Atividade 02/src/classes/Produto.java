@@ -7,7 +7,7 @@ public abstract class Produto
     String genero;
     Boolean locado;
 
-    abstract double calcularDiaria();
+    abstract double calcularDiaria(int c);
 
     public String getCodigo() {
         return codigo;

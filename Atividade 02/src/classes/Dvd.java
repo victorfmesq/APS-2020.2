@@ -21,11 +21,14 @@ public class Dvd extends Filme
         super.locado = loc;
         super.anoLancamento = anoL;
         super.duracao = dur;
-        this.arranhado = arr    ;
+        this.arranhado = arr;
     }
 
     @Override
-    double calcularDiaria() {
-        return 0;
+    double calcularDiaria(int c) {
+        if(this.arranhado){
+            return c * 6.0;
+        }
+        return c * 12.0;
     }
 }

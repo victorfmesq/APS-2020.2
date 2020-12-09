@@ -1,5 +1,7 @@
 package classes;
 
+import java.util.Calendar;
+
 public class Bluray extends Filme{
 
     String idiomas;
@@ -33,7 +35,5 @@ public class Bluray extends Filme{
     }
 
     @Override
-    double calcularDiaria() {
-        return 0;
-    }
+    double calcularDiaria(int c) { return c * 15.0; }
 }
