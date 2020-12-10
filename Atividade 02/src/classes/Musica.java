@@ -20,4 +20,16 @@ public abstract class Musica extends Produto{
     public void setNumFaixa(int numFaixa) {
         this.numFaixa = numFaixa;
     }
+
+    @Override
+    public String toString() {
+        return "Musica{" +
+                "autor='" + autor + '\'' +
+                ", numFaixa=" + numFaixa +
+                ", codigo='" + codigo + '\'' +
+                ", titulo='" + titulo + '\'' +
+                ", genero='" + genero + '\'' +
+                ", locado=" + locado +
+                '}';
+    }
 }

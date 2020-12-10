@@ -36,4 +36,17 @@ public class Bluray extends Filme{
 
     @Override
     double calcularDiaria(int c) { return c * 15.0; }
+
+    @Override
+    public String toString() {
+        return "Bluray{" +
+                "idiomas='" + idiomas + '\'' +
+                ", anoLancamento=" + anoLancamento +
+                ", duracao=" + duracao +
+                ", codigo='" + codigo + '\'' +
+                ", titulo='" + titulo + '\'' +
+                ", genero='" + genero + '\'' +
+                ", locado=" + locado +
+                '}';
+    }
 }

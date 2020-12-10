@@ -39,4 +39,17 @@ public class LPs extends Musica{
         }
         return c * 23.5;
     }
+
+    @Override
+    public String toString() {
+        return "LPs{" +
+                "raro=" + raro +
+                ", autor='" + autor + '\'' +
+                ", numFaixa=" + numFaixa +
+                ", codigo='" + codigo + '\'' +
+                ", titulo='" + titulo + '\'' +
+                ", genero='" + genero + '\'' +
+                ", locado=" + locado +
+                '}';
+    }
 }

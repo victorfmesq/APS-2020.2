@@ -9,6 +9,7 @@ public class Cliente extends Pessoa{
     public Cliente(String nome, String matricula, String endereco, int idade, char sexo) {
         super.nome = nome;
         super.matricula = matricula;
+        super.isCliente = true;
         this.endereco = endereco;
         this.idade = idade;
         this.sexo = sexo;

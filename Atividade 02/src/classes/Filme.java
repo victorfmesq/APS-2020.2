@@ -20,4 +20,16 @@ public abstract class Filme extends Produto
     public void setDuracao(int duracao) {
         this.duracao = duracao;
     }
+
+    @Override
+    public String toString() {
+        return "Filme{" +
+                "anoLancamento=" + anoLancamento +
+                ", duracao=" + duracao +
+                ", codigo='" + codigo + '\'' +
+                ", titulo='" + titulo + '\'' +
+                ", genero='" + genero + '\'' +
+                ", locado=" + locado +
+                '}';
+    }
 }

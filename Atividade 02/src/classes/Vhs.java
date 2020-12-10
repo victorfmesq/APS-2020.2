@@ -39,4 +39,17 @@ public class Vhs extends Filme
         }
         return c * 8.0;
     }
+
+    @Override
+    public String toString() {
+        return "Vhs{" +
+                "anoLancamento=" + anoLancamento +
+                ", duracao=" + duracao +
+                ", codigo='" + codigo + '\'' +
+                ", titulo='" + titulo + '\'' +
+                ", genero='" + genero + '\'' +
+                ", locado=" + locado +
+                ", cores=" + cores +
+                '}';
+    }
 }

@@ -31,4 +31,17 @@ public class Dvd extends Filme
         }
         return c * 12.0;
     }
+
+    @Override
+    public String toString() {
+        return "Dvd{" +
+                "arranhado=" + arranhado +
+                ", anoLancamento=" + anoLancamento +
+                ", duracao=" + duracao +
+                ", codigo='" + codigo + '\'' +
+                ", titulo='" + titulo + '\'' +
+                ", genero='" + genero + '\'' +
+                ", locado=" + locado +
+                '}';
+    }
 }

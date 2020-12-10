@@ -4,6 +4,7 @@ public abstract class Pessoa {
 
     String nome;
     String matricula;
+    boolean isCliente;
 
     public String getNome() {
         return nome;

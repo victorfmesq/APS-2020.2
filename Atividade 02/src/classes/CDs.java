@@ -50,4 +50,17 @@ public class CDs extends Musica{
         else if(!this.arranhado && this.duplo){ return c * 20.0; }
         else{return c * 10.0;}
     }
+
+    @Override
+    public String toString() {
+        return "CDs{" +
+                "duplo=" + duplo +
+                ", autor='" + autor + '\'' +
+                ", numFaixa=" + numFaixa +
+                ", codigo='" + codigo + '\'' +
+                ", titulo='" + titulo + '\'' +
+                ", genero='" + genero + '\'' +
+                ", locado=" + locado +
+                '}';
+    }
 }

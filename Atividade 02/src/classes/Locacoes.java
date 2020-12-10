@@ -20,13 +20,12 @@ public class Locacoes {
         this.diarias = (int) ((prevEntrega.getTimeInMillis() - saida.getTimeInMillis()) / 3600000) % 24;
     }
 
-    void calcularMulta(){
-        RepositorioProdutos produtos = new RepositorioProdutos();
-        Produto p = produtos.retornarProduto(codigoProduto);
+    double calcularMulta(){
+        Produto p = RepositorioProdutos.retornarProduto(codigoProduto);
 
         if(p == null){ // se o produto nao foi locado
             System.out.println("ERRO: Este produto nao foi Locado");
-            return;
+            return 0;
         }
         // guarda a data atual (momento da devolução);
         Calendar dataAtual = GregorianCalendar.getInstance();
@@ -40,11 +39,12 @@ public class Locacoes {
             int deltaTime = (int) (((time2 - time1) / 3600000) % 24);
 
             //valor da multa = 10% da diaria para cada dia de atraso
-            double multa = (10/100 * p.calcularDiaria(this.diarias) * deltaTime);
+            double multa = (10.0/100.0 * p.calcularDiaria(this.diarias) * deltaTime);
             System.out.println("A multa é de: " + multa);
-            return;
+            return multa;
         }
         System.out.println("Nenhuma multa será aplicada");
+        return 0;
     }
 
     public String getCodigoProduto() {
@@ -78,4 +78,8 @@ public class Locacoes {
     public void setPrevEntrega(Calendar prevEntrega) {
         this.prevEntrega = prevEntrega;
     }
+
+    public int getDiarias() { return diarias;  }
+
+    public void setDiarias(int diarias) { this.diarias = diarias; }
 }
