@@ -10,6 +10,7 @@ public class Cliente extends Pessoa{
         super.nome = nome;
         super.matricula = matricula;
         super.isCliente = true;
+        super.isGerente = false;
         this.endereco = endereco;
         this.idade = idade;
         this.sexo = sexo;

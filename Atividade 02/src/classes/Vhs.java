@@ -8,7 +8,6 @@ public class Vhs extends Filme
         super.codigo = cod;
         super.titulo = tit;
         super.genero = gen;
-        super.locado = false;
         super.anoLancamento = anoL;
         super.duracao = dur;
         this.cores = cores;

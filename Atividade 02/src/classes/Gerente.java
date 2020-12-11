@@ -8,21 +8,22 @@ public class Gerente extends Funcionario{
         super.login = login;
         super.senha = senha;
         super.isCliente = false;
+        super.isGerente = true;
     }
 
-    void adicionarCliente(String mat, Cliente c){
+    public void adicionarCliente(String mat, Cliente c){
         RepositorioPessoas.adicionaPessoa(mat, c);
     }
 
-    void adicionarProduto(String cod, Produto p){
+    public void adicionarProduto(String cod, Produto p){
         RepositorioProdutos.adicionaProduto(cod, p);
     }
 
-    void adicionarOperador(String mat, Operador o){
+    public void adicionarOperador(String mat, Operador o){
         RepositorioPessoas.adicionaPessoa(mat, o);
     }
 
-    void listarClientes(){
+    public void listarClientes(){
         for(Pessoa pessoa : RepositorioPessoas.pessoas.values()){
             if(pessoa.isCliente){
                 pessoa.toString();
@@ -31,13 +32,13 @@ public class Gerente extends Funcionario{
         }
     }
 
-    void listarProdutos(){
+    public void listarProdutos(){
         for(Produto produto : RepositorioProdutos.produtos.values()){
             produto.toString();
         }
     }
 
-    void listarOperadores(){
+    public void listarOperadores(){
         for(Pessoa pessoa : RepositorioPessoas.pessoas.values()){
             if(!pessoa.isCliente){
                 pessoa.toString();
@@ -46,15 +47,15 @@ public class Gerente extends Funcionario{
         }
     }
 
-    void procurarClientes(String matricula){
+    public void procurarClientes(String matricula){
         RepositorioPessoas.pessoas.get(matricula).toString();
     }
 
-    void prourarProdutos(String codigo){
+    public void prourarProdutos(String codigo){
         RepositorioProdutos.produtos.get(codigo).toString();
     }
 
-    void procurarOperadores(String matricula){
+    public void procurarOperadores(String matricula){
         RepositorioPessoas.pessoas.get(matricula).toString();
     }
 
@@ -65,4 +66,6 @@ public class Gerente extends Funcionario{
                 ", matricula=" + matricula +
                 '}';
     }
+
+
 }

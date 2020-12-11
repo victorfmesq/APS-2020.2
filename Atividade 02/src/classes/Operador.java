@@ -6,21 +6,22 @@ public class Operador extends Funcionario{
         super.nome = nome;
         super.matricula = matricula;
         super.isCliente = false;
+        super.isGerente = false;
         super.login = login;
         super.senha = senha;
     }
 
-    void locarProduto(String codigo, String matricula){
+    public void locarProduto(String codigo, String matricula){
         RepositorioLocacoes loc = new RepositorioLocacoes();
         loc.AdicionarLocacao(codigo, matricula);
     }
 
-    void excluirLocacao(String codigo, String matricula){
+    public void excluirLocacao(String codigo, String matricula){
         RepositorioLocacoes loc = new RepositorioLocacoes();
         loc.removerLocacao(codigo, matricula);
     }
 
-    void fazerBaixa(String codigo, String matricula){
+    public void fazerBaixa(String codigo, String matricula){
         RepositorioLocacoes loc = new RepositorioLocacoes();
         for(int i = 0; i < loc.getLocacoes().size(); i++){
             if(loc.getLocacoes().get(i).getCodigoProduto().equals(codigo) &&
@@ -37,7 +38,7 @@ public class Operador extends Funcionario{
         }
     }
 
-    void procurarProduto(String codigo){
+    public void procurarProduto(String codigo){
         Produto p = RepositorioProdutos.retornarProduto(codigo);
         if(p == null){
             System.out.println("ERRO: Este produto nao foi cadastrado no sistema");
@@ -46,7 +47,7 @@ public class Operador extends Funcionario{
         System.out.println(p.toString());
     }
 
-    void procurarClientes(String matricula){
+    public void procurarClientes(String matricula){
         Pessoa p = RepositorioPessoas.retornarPessoa(matricula);
         if(p == null){
             System.out.println("ERRO: Este clinte não foi cadastrado no sistema");

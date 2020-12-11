@@ -19,5 +19,5 @@ public class RepositorioPessoas {
                 return pessoas.get(mat);
         }
 
-
+        public static Map<String, Pessoa> getPessoas() { return pessoas; }
 }

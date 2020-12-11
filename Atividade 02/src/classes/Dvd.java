@@ -14,11 +14,10 @@ public class Dvd extends Filme
         this.arranhado = false;
     }
 
-    public Dvd(String cod, String tit, String gen, boolean loc ,int anoL, int dur, boolean arr){
+    public Dvd(String cod, String tit, String gen,int anoL, int dur, boolean arr){
         super.codigo = cod;
         super.titulo = tit;
         super.genero = gen;
-        super.locado = loc;
         super.anoLancamento = anoL;
         super.duracao = dur;
         this.arranhado = arr;
