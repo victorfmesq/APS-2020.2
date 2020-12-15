@@ -26,37 +26,35 @@ public class Gerente extends Funcionario{
     public void listarClientes(){
         for(Pessoa pessoa : RepositorioPessoas.pessoas.values()){
             if(pessoa.isCliente){
-                pessoa.toString();
-                System.out.println("");
+                System.out.println(pessoa.toString());
             }
         }
     }
 
     public void listarProdutos(){
         for(Produto produto : RepositorioProdutos.produtos.values()){
-            produto.toString();
+            System.out.println(produto.toString());
         }
     }
 
     public void listarOperadores(){
         for(Pessoa pessoa : RepositorioPessoas.pessoas.values()){
             if(!pessoa.isCliente){
-                pessoa.toString();
-                System.out.println("");
+                System.out.println(pessoa.toString());
             }
         }
     }
 
     public void procurarClientes(String matricula){
-        RepositorioPessoas.pessoas.get(matricula).toString();
+        System.out.println(RepositorioPessoas.pessoas.get(matricula).toString());
     }
 
     public void prourarProdutos(String codigo){
-        RepositorioProdutos.produtos.get(codigo).toString();
+       System.out.println(RepositorioProdutos.produtos.get(codigo).toString());
     }
 
     public void procurarOperadores(String matricula){
-        RepositorioPessoas.pessoas.get(matricula).toString();
+        System.out.println(RepositorioPessoas.pessoas.get(matricula).toString());
     }
 
     @Override

@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class RepositorioPessoas {
 
-        static Map<String, Pessoa> pessoas = new HashMap<>();
+        static Map<String, Pessoa> pessoas = new HashMap<String, Pessoa>();
 
         public static void adicionaPessoa(String mat, Pessoa valor){
                 pessoas.put(mat, valor);

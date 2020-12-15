@@ -42,7 +42,8 @@ public class Main {
                         if(gerente.getLogin().equals(login) && gerente.getSenha().equals(senha)){
                             existe = true;
                         }
-                        System.out.println("Login e/ou senha inválidos. Por favor tente novamente");
+                        else
+                            System.out.println("Login e/ou senha inválidos. Por favor tente novamente");
                         // testar se Login e senha são validos e se é um gerente
                         // se for valido, sair do laço e continuar com o programa
                         // se nao, emitir um Warning e voltar para tela de login
@@ -91,18 +92,25 @@ public class Main {
                                             if(resp == 1){
                                                 //Bluray
                                                 invalid = false;
-                                                System.out.println("Digite o CODIGO do produto: ");
+                                                System.out.print("Digite o CODIGO do produto: ");
+                                                scan.nextLine();
                                                 String cod = scan.next();
-                                                System.out.println("Digite o TITULO do filme: ");
+                                                System.out.print("Digite o TITULO do filme: ");
+                                                scan.nextLine();
                                                 String tit = scan.next();
-                                                System.out.println("Digite o GENERO do filme: ");
+                                                System.out.print("Digite o GENERO do filme: ");
+                                                scan.nextLine();
                                                 String gen = scan.next();
-                                                System.out.println("Digite o ANO DE LANCAMENTO do filme: ");
+                                                System.out.print("Digite o ANO DE LANCAMENTO do filme: ");
+                                                scan.nextLine();
                                                 int ano = scan.nextInt();
-                                                System.out.println("Digite a DURACAO do filme: ");
+                                                System.out.print("Digite a DURACAO do filme: ");
+                                                scan.nextLine();
                                                 int dur = scan.nextInt();
-                                                System.out.println("Digite em sequencia e separados por (,) os idiomas o filme");
+                                                System.out.print("Digite em sequencia e separados por (,) os idiomas o filme: ");
+                                                scan.nextLine();
                                                 String idi = scan.next();
+                                                scan.nextLine();
 
                                                 Bluray blu = new Bluray(cod, tit, gen, ano, dur, idi); // cria um produto Blu
                                                 gerente.adicionarProduto(cod, blu); // aloca na HashMap Produto
@@ -112,15 +120,22 @@ public class Main {
                                                 //DVD
                                                 invalid = false;
                                                 System.out.println("Digite o CODIGO do produto: ");
+                                                scan.nextLine();
                                                 String cod = scan.next();
                                                 System.out.println("Digite o TITULO do filme: ");
+                                                scan.nextLine();
                                                 String tit = scan.next();
                                                 System.out.println("Digite o GENERO do filme: ");
+                                                scan.nextLine();
                                                 String gen = scan.next();
                                                 System.out.println("Digite o ANO DE LANCAMENTO do filme: ");
+                                                scan.nextLine();
                                                 int ano = scan.nextInt();
                                                 System.out.println("Digite a DURACAO do filme: ");
+                                                scan.nextLine();
                                                 int dur = scan.nextInt();
+                                                scan.nextLine();
+
                                                 invalid = true;
                                                 do{
                                                     System.out.println("O DVD esta arranhado??");
@@ -145,15 +160,22 @@ public class Main {
                                             else if(resp == 3){
                                                 //VHS
                                                 System.out.println("Digite o CODIGO do produto: ");
+                                                scan.nextLine();
                                                 String cod = scan.next();
                                                 System.out.println("Digite o TITULO do filme: ");
+                                                scan.nextLine();
                                                 String tit = scan.next();
                                                 System.out.println("Digite o GENERO do filme: ");
+                                                scan.nextLine();
                                                 String gen = scan.next();
                                                 System.out.println("Digite o ANO DE LANCAMENTO do filme: ");
+                                                scan.nextLine();
                                                 int ano = scan.nextInt();
                                                 System.out.println("Digite a DURACAO do filme: ");
+                                                scan.nextLine();
                                                 int dur = scan.nextInt();
+                                                scan.nextLine();
+
                                                 invalid = true;
                                                 do{
                                                     System.out.println("O VHS eh a cores??");
@@ -192,15 +214,22 @@ public class Main {
                                             if(resp == 1){
                                                 //CDs
                                                 System.out.println("Digite o CODIGO do produto: ");
+                                                scan.nextLine();
                                                 String cod = scan.next();
                                                 System.out.println("Digite o TITULO do CD: ");
+                                                scan.nextLine();
                                                 String tit = scan.next();
                                                 System.out.println("Digite o GENERO do CD: ");
+                                                scan.nextLine();
                                                 String gen = scan.next();
                                                 System.out.println("Digite o AUTOR: ");
+                                                scan.nextLine();
                                                 String auto = scan.next();
                                                 System.out.println("Digite o NUMERO DE FAIXAS: ");
+                                                scan.nextLine();
                                                 int nf = scan.nextInt();
+                                                scan.nextLine();
+
                                                 do{
                                                     System.out.println("O CD esta ARRANHADO?");
                                                     System.out.println("1 - SIM");
@@ -257,15 +286,22 @@ public class Main {
                                             else if(resp == 2){
                                                 // LPs
                                                 System.out.println("Digite o CODIGO do produto: ");
+                                                scan.nextLine();
                                                 String cod = scan.next();
                                                 System.out.println("Digite o TITULO do LP: ");
+                                                scan.nextLine();
                                                 String tit = scan.next();
                                                 System.out.println("Digite o GENERO do LP: ");
+                                                scan.nextLine();
                                                 String gen = scan.next();
                                                 System.out.println("Digite o AUTOR: ");
+                                                scan.nextLine();
                                                 String auto = scan.next();
                                                 System.out.println("Digite o NUMERO DE FAIXAS: ");
+                                                scan.nextLine();
                                                 int nf = scan.nextInt();
+                                                scan.nextLine();
+
                                                 do{
                                                     System.out.println("Esse LP eh RARO? ");
                                                     System.out.println("1 - SIM");
@@ -301,26 +337,36 @@ public class Main {
                                 break;
                             case 4:
                                 // Listar Produtos (mostrar dados referentes ao objeto escolhido um a um -> use toString())
-                                System.out.println("Lista de produtos1");
+                                System.out.println("Lista de Produtos");
                                 gerente.listarProdutos();
                                 break;
                             case 5:
                                 // Listar Clientes (mostrar dados referentes ao objeto escolhido um a um -> use toString())
+                                System.out.println("Lista de Clientes");
+                                gerente.listarClientes();
                                 break;
                             case 6:
                                 // Listar Operadores (mostrar dados referentes ao objeto escolhido um a um -> use toString())
+                                System.out.println("Lista de Operadores");
+                                gerente.listarOperadores();
                                 break;
                             case 7:
                                 // Procurar Produto (Peça o código e mostre o Produto correspondente caso ele exista)
-                                // -> acessar o repositorio correspondente
+                                System.out.println("Digite o Codigo do Produto que deseja Procurar:");
+                                gerente.prourarProdutos(scan.next());
+                                scan.nextLine();
                                 break;
                             case 8:
                                 // Procurar Cliente (Peça a matricula e mostre a Pessoa correspondente caso ela exista)
-                                // -> acessar o repositorio correspondente
+                                System.out.println("Digite a Matricula do Cliente que deseja Procurar:");
+                                gerente.procurarClientes(scan.next());
+                                scan.nextLine();
                                 break;
                             case 9:
                                 // Procurar Operador (Peça a matricula e mostre a Pessoa correspondente caso ela exista)
-                                // -> acessar o repositorio correspondente
+                                System.out.println("Digite a Matricula do Operador que deseja Procurar:");
+                                gerente.procurarOperadores(scan.next());
+                                scan.nextLine();
                                 break;
                             case 10:
                                 // sair
@@ -347,6 +393,8 @@ public class Main {
                         if(operador.getLogin().equals(login) && operador.getSenha().equals(senha)){
                             existe = true;
                         }
+                        else
+                            System.out.println("Login e/ou senha inválidos. Por favor tente novamente");
                         // testar se Login e senha são validos e se é um operador
                         // se for valido, sair do laço e continuar com o programa
                         // se nao, emitir um Warning e voltar para tela de login
@@ -411,10 +459,16 @@ public class Main {
                             case 4:
                                 // Procurar Produto (Peça o código e mostre o Produto correspondente caso ele exista)
                                 // -> acessar o repositorio correspondente
+                                System.out.println("Digite o codigo do produto: ");
+                                operador.procurarProduto(scan.next());
+                                scan.nextLine();
                                 break;
                             case 5:
                                 // Procurar Cliente (Peça a matricula e mostre a Pessoa correspondente caso ela exista)
                                 // -> acessar o repositorio correspondente
+                                System.out.println("Digite a matricula do Cliente: ");
+                                operador.procurarClientes(scan.next());
+                                scan.nextLine();
                                 break;
                             case 6:
                                 // Sair

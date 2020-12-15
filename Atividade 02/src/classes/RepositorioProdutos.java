@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class RepositorioProdutos {
 
-    static Map<String, Produto> produtos = new HashMap<>();
+    static Map<String, Produto> produtos = new HashMap<String, Produto>();
 
     // methods
     public static void adicionaProduto(String chave, Produto valor){
