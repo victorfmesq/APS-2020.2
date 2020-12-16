@@ -20,7 +20,7 @@ public class Locacoes {
         this.diarias = (int) ((prevEntrega.getTimeInMillis() - saida.getTimeInMillis()) / 3600000) % 24;
     }
 
-    double calcularMulta(){
+    public double calcularMulta(){
         Produto p = RepositorioProdutos.retornarProduto(codigoProduto);
 
         if(p == null){ // se o produto nao foi locado

@@ -16,6 +16,10 @@ public class Gerente extends Funcionario{
     }
 
     public void adicionarProduto(String cod, Produto p){
+        if(RepositorioProdutos.retornarProduto(cod) != null){
+            System.out.println("ERRO: Codigo ja registrado");
+            return;
+        }
         RepositorioProdutos.adicionaProduto(cod, p);
     }
 
@@ -39,22 +43,33 @@ public class Gerente extends Funcionario{
 
     public void listarOperadores(){
         for(Pessoa pessoa : RepositorioPessoas.pessoas.values()){
-            if(!pessoa.isCliente){
+            if(!pessoa.isCliente && !pessoa.isGerente){
                 System.out.println(pessoa.toString());
             }
         }
     }
 
     public void procurarClientes(String matricula){
-        System.out.println(RepositorioPessoas.pessoas.get(matricula).toString());
+        if(RepositorioPessoas.retornarPessoa(matricula) != null && RepositorioPessoas.retornarPessoa(matricula).isCliente){
+            System.out.println(RepositorioPessoas.pessoas.get(matricula).toString());
+            return;
+        }
+        System.out.println("ERRO: Matricula não encontrada");
     }
 
     public void prourarProdutos(String codigo){
-       System.out.println(RepositorioProdutos.produtos.get(codigo).toString());
+        if(RepositorioProdutos.retornarProduto(codigo) != null){
+            System.out.println(RepositorioProdutos.produtos.get(codigo).toString());
+        }
+       System.out.println("ERRO: Produto nao encontrado");
     }
 
     public void procurarOperadores(String matricula){
-        System.out.println(RepositorioPessoas.pessoas.get(matricula).toString());
+        if(RepositorioPessoas.retornarPessoa(matricula) != null && !RepositorioPessoas.retornarPessoa(matricula).isCliente){
+            System.out.println(RepositorioPessoas.pessoas.get(matricula).toString());
+            return;
+        }
+        System.out.println("ERRO: Matricula não encontrada");
     }
 
     @Override

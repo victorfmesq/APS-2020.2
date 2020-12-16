@@ -11,10 +11,10 @@ public class Main {
         RepositorioProdutos rProdutos = new RepositorioProdutos();
         RepositorioLocacoes rLocacoes = new RepositorioLocacoes();
 
-        Gerente gerente = new Gerente("Diluc","542","logingerente","senhagerente");
+        Gerente gerente = new Gerente("Diluc","542","1","1");
         RepositorioPessoas.adicionaPessoa("542", gerente);
 
-        Operador operador = new Operador("Kaeya", "245", "loginoperador", "senhaoperador");
+        Operador operador = new Operador("Kaeya", "245", "1", "1");
         RepositorioPessoas.adicionaPessoa("245", operador);
 
         Scanner scan = new Scanner(System.in);
@@ -52,7 +52,7 @@ public class Main {
 
                     boolean operando = true; // ativo enquanto o usuário estiver usando o programa
                     do{
-                        System.out.println("**** Olá Gerente <Nome do Gerente> ****"); // "ola gerente " + Gerente.getNome()
+                        System.out.println("**** Olá Gerente "+ gerente.getNome() +" ****");
                         System.out.println("1 - Cadastrar Produto");
                         System.out.println("2 - Cadastrar Cliente");
                         System.out.println("3 - Cadastrar Operador");
@@ -97,24 +97,21 @@ public class Main {
                                                 String cod = scan.next();
                                                 System.out.print("Digite o TITULO do filme: ");
                                                 scan.nextLine();
-                                                String tit = scan.next();
+                                                String tit = scan.nextLine();
                                                 System.out.print("Digite o GENERO do filme: ");
-                                                scan.nextLine();
-                                                String gen = scan.next();
+                                                String gen = scan.nextLine();
                                                 System.out.print("Digite o ANO DE LANCAMENTO do filme: ");
-                                                scan.nextLine();
                                                 int ano = scan.nextInt();
                                                 System.out.print("Digite a DURACAO do filme: ");
                                                 scan.nextLine();
                                                 int dur = scan.nextInt();
                                                 System.out.print("Digite em sequencia e separados por (,) os idiomas o filme: ");
                                                 scan.nextLine();
-                                                String idi = scan.next();
-                                                scan.nextLine();
+                                                String idi = scan.nextLine();
 
                                                 Bluray blu = new Bluray(cod, tit, gen, ano, dur, idi); // cria um produto Blu
                                                 gerente.adicionarProduto(cod, blu); // aloca na HashMap Produto
-                                                System.out.println("*** Produto Cadastrado ***");
+                                                System.out.println("*** Operação concluída ***");
                                             }
                                             else if(resp == 2){
                                                 //DVD
@@ -124,12 +121,10 @@ public class Main {
                                                 String cod = scan.next();
                                                 System.out.println("Digite o TITULO do filme: ");
                                                 scan.nextLine();
-                                                String tit = scan.next();
+                                                String tit = scan.nextLine();
                                                 System.out.println("Digite o GENERO do filme: ");
-                                                scan.nextLine();
-                                                String gen = scan.next();
+                                                String gen = scan.nextLine();
                                                 System.out.println("Digite o ANO DE LANCAMENTO do filme: ");
-                                                scan.nextLine();
                                                 int ano = scan.nextInt();
                                                 System.out.println("Digite a DURACAO do filme: ");
                                                 scan.nextLine();
@@ -142,16 +137,17 @@ public class Main {
                                                     System.out.println("1 - SIM");
                                                     System.out.println("2 - NAO");
                                                     int arr = scan.nextInt();
+                                                    scan.nextLine();
                                                     if(arr == 1){
-                                                        Dvd dvd = new Dvd(cod, tit, gen, ano, dur, false); // cria o produto
-                                                        gerente.adicionarProduto(cod, dvd); // add no repositorio
-                                                        invalid = false;
-                                                        System.out.println("*** Produto Cadastrado ***");
-                                                    }else if(arr == 2){
                                                         Dvd dvd = new Dvd(cod, tit, gen, ano, dur, true); // cria o produto
                                                         gerente.adicionarProduto(cod, dvd); // add no repositorio
                                                         invalid = false;
-                                                        System.out.println("*** Produto Cadastrado ***");
+                                                        System.out.println("*** Operação concluída ***");
+                                                    }else if(arr == 2){
+                                                        Dvd dvd = new Dvd(cod, tit, gen, ano, dur, false); // cria o produto
+                                                        gerente.adicionarProduto(cod, dvd); // add no repositorio
+                                                        invalid = false;
+                                                        System.out.println("*** Operação concluída ***");
                                                     }
                                                     else
                                                         System.out.println("ERRO: Opcao invalida, tente novamente:");
@@ -164,12 +160,10 @@ public class Main {
                                                 String cod = scan.next();
                                                 System.out.println("Digite o TITULO do filme: ");
                                                 scan.nextLine();
-                                                String tit = scan.next();
+                                                String tit = scan.nextLine();
                                                 System.out.println("Digite o GENERO do filme: ");
-                                                scan.nextLine();
-                                                String gen = scan.next();
+                                                String gen = scan.nextLine();
                                                 System.out.println("Digite o ANO DE LANCAMENTO do filme: ");
-                                                scan.nextLine();
                                                 int ano = scan.nextInt();
                                                 System.out.println("Digite a DURACAO do filme: ");
                                                 scan.nextLine();
@@ -186,12 +180,12 @@ public class Main {
                                                         Vhs vhs = new Vhs(cod, tit, gen, ano, dur, true); // cria o produto
                                                         gerente.adicionarProduto(cod, vhs); // add no repositorio
                                                         invalid = false;
-                                                        System.out.println("*** Produto Cadastrado ***");
+                                                        System.out.println("*** Operação concluída ***");
                                                     }else if(isCollor == 2){
                                                         Vhs vhs = new Vhs(cod, tit, gen, ano, dur, false); // cria o produto
                                                         gerente.adicionarProduto(cod, vhs); // add no repositorio
                                                         invalid = false;
-                                                        System.out.println("*** Produto Cadastrado ***");
+                                                        System.out.println("*** Operação concluída ***");
                                                     }
                                                     else
                                                         System.out.println("ERRO: Opcao invalida, tente novamente:");
@@ -218,15 +212,12 @@ public class Main {
                                                 String cod = scan.next();
                                                 System.out.println("Digite o TITULO do CD: ");
                                                 scan.nextLine();
-                                                String tit = scan.next();
+                                                String tit = scan.nextLine();
                                                 System.out.println("Digite o GENERO do CD: ");
-                                                scan.nextLine();
-                                                String gen = scan.next();
+                                                String gen = scan.nextLine();
                                                 System.out.println("Digite o AUTOR: ");
-                                                scan.nextLine();
-                                                String auto = scan.next();
+                                                String auto = scan.nextLine();
                                                 System.out.println("Digite o NUMERO DE FAIXAS: ");
-                                                scan.nextLine();
                                                 int nf = scan.nextInt();
                                                 scan.nextLine();
 
@@ -245,13 +236,13 @@ public class Main {
                                                                 CDs cd = new CDs(cod, tit, gen, auto, nf, true, true);
                                                                 gerente.adicionarProduto(cod, cd);
                                                                 invalid = false;
-                                                                System.out.println("*** Produto Cadastrado ***");
+                                                                System.out.println("*** Operação concluída ***");
                                                             }
                                                             else if(opt == 2){
                                                                 CDs cd = new CDs(cod, tit, gen, auto, nf, true, false);
                                                                 gerente.adicionarProduto(cod, cd);
                                                                 invalid = false;
-                                                                System.out.println("*** Produto Cadastrado ***");
+                                                                System.out.println("*** Operação concluída ***");
                                                             }
                                                             else
                                                                 System.out.println("ERRO: Opcao invalida, tente novamente");
@@ -267,13 +258,13 @@ public class Main {
                                                                 CDs cd = new CDs(cod, tit, gen, auto, nf, false, true);
                                                                 gerente.adicionarProduto(cod, cd);
                                                                 invalid = false;
-                                                                System.out.println("*** Produto Cadastrado ***");
+                                                                System.out.println("*** Operação concluída ***");
                                                             }
                                                             else if(opt == 2){
                                                                 CDs cd = new CDs(cod, tit, gen, auto, nf, false, false);
                                                                 gerente.adicionarProduto(cod, cd);
                                                                 invalid = false;
-                                                                System.out.println("*** Produto Cadastrado ***");
+                                                                System.out.println("*** Operação concluída ***");
                                                             }
                                                             else
                                                                 System.out.println("ERRO: Opcao invalida, tente novamente");
@@ -290,15 +281,12 @@ public class Main {
                                                 String cod = scan.next();
                                                 System.out.println("Digite o TITULO do LP: ");
                                                 scan.nextLine();
-                                                String tit = scan.next();
+                                                String tit = scan.nextLine();
                                                 System.out.println("Digite o GENERO do LP: ");
-                                                scan.nextLine();
-                                                String gen = scan.next();
+                                                String gen = scan.nextLine();
                                                 System.out.println("Digite o AUTOR: ");
-                                                scan.nextLine();
-                                                String auto = scan.next();
+                                                String auto = scan.nextLine();
                                                 System.out.println("Digite o NUMERO DE FAIXAS: ");
-                                                scan.nextLine();
                                                 int nf = scan.nextInt();
                                                 scan.nextLine();
 
@@ -311,13 +299,13 @@ public class Main {
                                                         LPs lp = new LPs(cod, tit, gen, auto, nf, true);
                                                         gerente.adicionarProduto(cod, lp);
                                                         invalid = false;
-                                                        System.out.println("*** Produto Cadastrado ***");
+                                                        System.out.println("*** Operação concluída ***");
                                                     }
                                                     else if(raro == 2){
                                                         LPs lp = new LPs(cod, tit, gen, auto, nf, false);
                                                         gerente.adicionarProduto(cod, lp);
                                                         invalid = false;
-                                                        System.out.println("*** Produto Cadastrado ***");
+                                                        System.out.println("*** Operação concluída ***");
                                                     }
                                                     else
                                                         System.out.println("ERRO: Opcao invalida, tente novamente");
@@ -329,11 +317,45 @@ public class Main {
                                     }
                                     break;
                                 }while (!optFalse);
+                                break;
                             case 2:
                                 // Cadastrar Cliente (Alimenta a classe Cliente -> use Sets())
+                                System.out.println("Nome do cliente: ");
+                                scan.nextLine();
+                                String nome = scan.next();
+                                System.out.println("Matrícula: ");
+                                scan.nextLine();
+                                String matri = scan.next();
+                                System.out.println("Endereço: ");
+                                scan.nextLine();
+                                String end = scan.next();
+                                System.out.println("Idade: ");
+                                scan.nextLine();
+                                int idade = scan.nextInt();
+                                System.out.println("Sexo: ");
+                                scan.nextLine();
+                                char sex = scan.next().charAt(0);
+                                Cliente c = new Cliente(nome, matri, end, idade, sex);
+                                RepositorioPessoas.adicionaPessoa(matri, c);
+                                System.out.println("Cliente adicionado com sucesso.");
                                 break;
                             case 3:
                                 // Cadastrar Operador (Alimenta a classe Operador -> use Sets())
+                                System.out.println("Nome do operador: ");
+                                scan.nextLine();
+                                String nome3 = scan.next();
+                                System.out.println("Matrícula: ");
+                                scan.nextLine();
+                                String matri3 = scan.next();
+                                System.out.println("Login: ");
+                                scan.nextLine();
+                                String login3 = scan.next();
+                                System.out.println("Senha: ");
+                                scan.nextLine();
+                                String senha3 = scan.next();
+                                Operador opp = new Operador(nome3, matri3, login3, senha3);
+                                RepositorioPessoas.adicionaPessoa(matri3, opp);
+                                System.out.println("Operador cadastrado com sucesso.");
                                 break;
                             case 4:
                                 // Listar Produtos (mostrar dados referentes ao objeto escolhido um a um -> use toString())
@@ -375,7 +397,6 @@ public class Main {
                                 break;
                             default:
                                 System.out.println("**** Opção invalida ****");
-
                         }
                     }while (operando);
                     break;
@@ -386,9 +407,9 @@ public class Main {
                         // Login Operador
                         System.out.println("**** Faça seu Login ****");
                         System.out.println("Digite seu login: ");
-                        String login = scan.nextLine();
+                        String login = scan.next();
                         System.out.println("Digite sua senha: ");
-                        String senha = scan.nextLine();
+                        String senha = scan.next();
 
                         if(operador.getLogin().equals(login) && operador.getSenha().equals(senha)){
                             existe = true;
@@ -403,7 +424,7 @@ public class Main {
 
                     operando = true;
                     do{
-                        System.out.println("**** Olá Operador <Nome do Operador> ****"); // "ola operador " + Operador.getNome()
+                        System.out.println("**** Olá Operador "+ operador.getNome() +" ****");
                         System.out.println("1 - Fazer locação");
                         System.out.println("2 - Dar baixa em locação");
                         System.out.println("3 - Excluir locação");
@@ -416,6 +437,21 @@ public class Main {
 
                         switch(oOp){
                             case 1:
+                                System.out.println("Informe a matrícula do cliente: ");
+                                scan.nextLine();
+                                String mat = scan.next();
+                                System.out.println("Informe o código do produto: ");
+                                scan.nextLine();
+                                String cod = scan.next();
+
+                                if(RepositorioProdutos.retornarProduto(cod) != null) {
+                                    if(RepositorioProdutos.retornarProduto(cod).getLocado() == false) {
+                                        RepositorioLocacoes.AdicionarLocacao(cod, mat);
+                                        RepositorioProdutos.retornarProduto(cod).setLocado(true);
+                                    }else
+                                        System.out.println("Impossível realizar locação pois produto está alugado no momento.");
+                                }else
+                                    System.out.println("Produto informado não existente.");
                                 // Fazer Locação
                                 /* deve pedir 2 informações:
                                     1 - matricula do Cliente
@@ -432,6 +468,21 @@ public class Main {
                                  */
                                 break;
                             case 2:
+                                System.out.println("Informe a matrícula do cliente: ");
+                                scan.nextLine();
+                                String mat2 = scan.next();
+                                System.out.println("Informe o código do produto: ");
+                                scan.nextLine();
+                                String cod2 = scan.next();
+                                if(RepositorioLocacoes.retornarLocacao(cod2) != null) {
+                                    if(RepositorioLocacoes.retornarLocacao(cod2).getMatriculaCliente().equals(mat2)) {
+                                        operador.fazerBaixa(mat2, cod2);
+                                    }else {
+                                        System.out.println("Mátricula do cliente inválida.");
+                                    }
+                                }else {
+                                    System.out.println("Código do produto informado inválido.");
+                                }
                                 // Dar baixa em locação
                                 /* deve pedir 2 informações:
                                     1 - matricula do Cliente
@@ -445,6 +496,22 @@ public class Main {
                                  */
                                 break;
                             case 3:
+                                System.out.println("Informe a matrícula do cliente: ");
+                                scan.nextLine();
+                                String mat3 = scan.next();
+                                System.out.println("Informe o código do produto: ");
+                                scan.nextLine();
+                                String cod3 = scan.next();
+                                if(RepositorioLocacoes.retornarLocacao(cod3) != null) {
+                                    if(RepositorioLocacoes.retornarLocacao(cod3).getMatriculaCliente().equals(mat3)) {
+                                        RepositorioLocacoes.removerLocacao(cod3, mat3);
+                                        RepositorioProdutos.retornarProduto(cod3).setLocado(false);
+                                    }else {
+                                        System.out.println("Mátricula do cliente inválida.");
+                                    }
+                                }else {
+                                    System.out.println("Código do produto informado inválido.");
+                                }
                                 // Excluir locação
                                 /* deve pedir 2 informações:
                                     1 - matricula do Cliente

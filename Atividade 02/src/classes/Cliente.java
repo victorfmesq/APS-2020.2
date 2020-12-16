@@ -43,9 +43,9 @@ public class Cliente extends Pessoa{
     @Override
     public String toString() {
         return "Cliente{" +
-                ", nome='" + nome + '\'' +
+                ", nome= " + nome + '\'' +
                 ", matricula=" + matricula +
-                "endereco='" + endereco + '\'' +
+                ", endereco= " + endereco + '\'' +
                 ", idade=" + idade +
                 ", sexo=" + sexo +
                 '}';
